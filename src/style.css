@@ -1,0 +1,53 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  color: #244764;
+  font-family: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Noto Sans SC", system-ui,
+    -apple-system, sans-serif;
+  background-color: #eef6fd;
+  background-image:
+    radial-gradient(1100px 700px at 50% -18%, rgba(109, 187, 235, 0.2), transparent 66%),
+    radial-gradient(900px 540px at 104% 28%, rgba(176, 207, 233, 0.28), transparent 68%),
+    linear-gradient(180deg, #f9fcff 0%, #eef6fd 52%, #e7f0f9 100%);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+html.theme-dark {
+  color-scheme: dark;
+}
+
+html.theme-dark body {
+  color: #d8e9f8;
+  background-color: #102237;
+  background-image:
+    radial-gradient(1100px 700px at 50% -18%, rgba(62, 143, 198, 0.18), transparent 66%),
+    radial-gradient(900px 540px at 104% 28%, rgba(44, 88, 129, 0.24), transparent 68%),
+    linear-gradient(180deg, #12263b 0%, #102237 55%, #0b1b2d 100%);
+}
