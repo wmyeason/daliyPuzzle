@@ -55,6 +55,20 @@ npx gh-pages -d dist      # 首次使用需先安装：npm i -D gh-pages
 
 将 `dist/` 目录内容上传到 Nginx、Vercel、Netlify、对象存储等任意静态托管即可，无需后端服务。
 
+### 使用 Docker 部署
+
+项目内置多阶段构建的 `Dockerfile`（Node 构建 → Nginx 托管）：
+
+```bash
+# 构建镜像
+docker build -t daily-calendar-puzzle .
+
+# 启动容器：宿主机 8086 端口映射到容器 8086
+docker run -d --name daily-puzzle -p 8086:8086 daily-calendar-puzzle
+```
+
+启动后访问 <http://localhost:8086> 即可。镜像内的 Nginx 已配置 gzip 压缩、静态资源长缓存与入口页不缓存（见 `nginx.conf`）。
+
 ## 玩法
 
 1. 页面默认以**当天日期**为目标；也可以在顶栏选择目标日期，或点击「随机一天」。
